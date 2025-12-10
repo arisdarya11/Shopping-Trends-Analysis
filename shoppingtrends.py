@@ -57,11 +57,12 @@ menu = st.sidebar.radio(
 # ==========================
 
 # ------------------------------------
-# 1. GENERAL DASHBOARD
+# 1. GENERAL DASHBOARD (UPGRADED)
 # ------------------------------------
 if menu == "General Dashboard":
     st.header("📈 General Dashboard")
 
+    # ---- METRICS ----
     c1, c2, c3, c4 = st.columns(4)
     c1.metric("Total Rows", df.shape[0])
     c2.metric("Total Columns", df.shape[1])
@@ -69,26 +70,64 @@ if menu == "General Dashboard":
     c4.metric("Numeric Features", len(num_cols))
 
     st.markdown("---")
-    st.subheader("Data Preview")
+
+    # ---- DATA PREVIEW ----
+    st.subheader("👀 Data Preview")
     st.dataframe(df.head(), use_container_width=True)
 
-    st.subheader("Quick Distribution")
-    left, right = st.columns(2)
+    st.markdown("---")
 
-    with left:
-        if num_cols:
-            sel_num = st.selectbox("Pilih Numeric Column", num_cols)
-            fig = px.histogram(df, x=sel_num, nbins=30, marginal="box")
-            st.plotly_chart(fig, use_container_width=True)
+    # ==========================
+    # 📊 VISUALISASI PENTING
+    # ==========================
 
-    with right:
-        if cat_cols:
-            sel_cat = st.selectbox("Pilih Categorical Column", cat_cols)
-            vc = df[sel_cat].value_counts().reset_index()
-            vc.columns = [sel_cat, "Total"]
-            fig = px.bar(vc, x=sel_cat, y="Total")
-            st.plotly_chart(fig, use_container_width=True)
+    st.subheader("📊 Important Visualizations")
 
+    # ----------------------
+    # 1. TOP CATEGORICAL BAR CHART
+    # ----------------------
+    if cat_cols:
+        st.markdown("### 🔝 Top Categories Overview")
+
+        top_col = st.selectbox("Pilih Kolom Kategori", cat_cols)
+
+        vc = df[top_col].value_counts().reset_index().head(10)
+        vc.columns = [top_col, "Total"]
+
+        fig = px.bar(vc, x=top_col, y="Total", title=f"Top Categories of {top_col}")
+        st.plotly_chart(fig, use_container_width=True)
+
+    st.markdown("---")
+
+    # ----------------------
+    # 2. NUMERIC DISTRIBUTION OVERVIEW
+    # ----------------------
+    if num_cols:
+        st.markdown("### 📉 Numeric Distribution Overview")
+
+        num_sel = st.selectbox("Pilih Kolom Numerik", num_cols)
+
+        fig = px.histogram(df, x=num_sel, nbins=40, marginal="box",
+                           title=f"Distribution of {num_sel}")
+        st.plotly_chart(fig, use_container_width=True)
+
+    st.markdown("---")
+
+    # ----------------------
+    # 3. CORRELATION HEATMAP
+    # ----------------------
+    if len(num_cols) > 1:
+        st.markdown("### 🔥 Correlation Heatmap")
+
+        corr = df[num_cols].corr()
+
+        fig = px.imshow(
+            corr,
+            text_auto=True,
+            aspect="auto",
+            title="Correlation Heatmap of Numeric Features"
+        )
+        st.plotly_chart(fig, use_container_width=True)
 # ------------------------------------
 # 3. CUSTOMER DEMOGRAPHICS
 # ------------------------------------
