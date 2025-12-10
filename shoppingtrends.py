@@ -93,8 +93,8 @@ if menu == "General Dashboard":
 # ------------------------------------
 # 2. EDA
 # ------------------------------------
-elif menu == "EDA":
-    st.header("🔍 Exploratory Data Analysis")
+elif menu == "Data Preprocessing":
+    st.header("🔍 Data Preprocessing")
 
     st.subheader("Dataset Overview")
     st.dataframe(df.describe(include="all").T, use_container_width=True)
