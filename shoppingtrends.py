@@ -91,33 +91,7 @@ if menu == "General Dashboard":
             st.plotly_chart(fig, use_container_width=True)
 
 # ------------------------------------
-# 2. EDA
-# ------------------------------------
-elif menu == "EDA":
-    st.header("🛠️ EDA")
 
-    st.subheader("Dataset Overview")
-    st.dataframe(df.describe(include="all").T, use_container_width=True)
-
-    st.subheader("Missing & Data Types")
-    dt = pd.DataFrame({
-        "dtype": df.dtypes.astype(str),
-        "missing": df.isnull().sum()
-    })
-    st.dataframe(dt, use_container_width=True)
-
-    if num_cols:
-        st.subheader("Boxplot (Outlier Detection)")
-        box_col = st.selectbox("Pilih Kolom", num_cols)
-        fig = px.box(df, y=box_col, points="outliers")
-        st.plotly_chart(fig, use_container_width=True)
-
-    if len(num_cols) > 1:
-        st.subheader("Correlation Matrix")
-        corr = df[num_cols].corr()
-        fig = px.imshow(corr, text_auto=True, aspect="auto")
-        st.plotly_chart(fig, use_container_width=True)
-# ------------------------------------
 # 3. CUSTOMER DEMOGRAPHICS
 # ------------------------------------
 elif menu == "Customer Demographics":
