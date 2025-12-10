@@ -93,8 +93,8 @@ if menu == "General Dashboard":
 # ------------------------------------
 # 2. EDA
 # ------------------------------------
-elif menu == "EDA":
-    st.header("🔍 EDA")
+elif menu == "Data Preprocessing":
+    st.header("🛠️ Data Preprocessing")
 
     st.subheader("Dataset Overview")
     st.dataframe(df.describe(include="all").T, use_container_width=True)
@@ -117,7 +117,6 @@ elif menu == "EDA":
         corr = df[num_cols].corr()
         fig = px.imshow(corr, text_auto=True, aspect="auto")
         st.plotly_chart(fig, use_container_width=True)
-
 # ------------------------------------
 # 3. CUSTOMER DEMOGRAPHICS
 # ------------------------------------
