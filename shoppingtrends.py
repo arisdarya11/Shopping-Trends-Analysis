@@ -46,7 +46,6 @@ menu = st.sidebar.radio(
     "Pilih Menu",
     [
         "General Dashboard",
-        "EDA",
         "Customer Demographics",
         "Customer Spending",
         "Customer Satisfaction & Loyalty"
@@ -91,7 +90,6 @@ if menu == "General Dashboard":
             st.plotly_chart(fig, use_container_width=True)
 
 # ------------------------------------
-
 # 3. CUSTOMER DEMOGRAPHICS
 # ------------------------------------
 elif menu == "Customer Demographics":
