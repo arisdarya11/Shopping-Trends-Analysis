@@ -10,20 +10,22 @@
 💻 **GitHub Repository**  
 🔗 https://github.com/arisdarya11/Shopping-Trends-Analysis
 
+🔗 **LinkedIn**  
+🔗 https://www.linkedin.com/in/aris-darya-fernanda-b21b652a0/
+
 ---
 
 ## 📌 Overview  
 Proyek ini bertujuan untuk menganalisis pola perilaku belanja pelanggan menggunakan dataset *Customer Shopping Behavior*.  
-Analisis ini mencakup **demografi, preferensi produk, spending behaviour, payment patterns**, hingga **business recommendation** yang actionable.
+Analisis ini mencakup demografi, preferensi produk, spending behaviour, metode pembayaran, dan rekomendasi bisnis berdasarkan data.
 
 Dokumentasi ini menunjukkan kemampuan sebagai **Data Analyst** dalam:  
-
 - Data cleaning & preprocessing  
 - Exploratory Data Analysis (EDA)  
-- Customer segmentation  
+- Segmentasi pelanggan  
 - Spending analysis  
-- Insight bisnis  
-- Dashboard development menggunakan Streamlit  
+- Insight bisnis & rekomendasi strategis  
+- Dashboard interaktif menggunakan Streamlit  
 
 ---
 
@@ -39,101 +41,66 @@ Dokumentasi ini menunjukkan kemampuan sebagai **Data Analyst** dalam:
 ## 📂 Dataset  
 **File:** `df_EDA shopping.csv`  
 
-Dataset berisi informasi mengenai:  
+Dataset berisi informasi tentang:  
 - Demografi pelanggan  
 - Preferensi kategori produk  
 - Metode pembayaran  
 - Tipe pengiriman  
-- Pembelian sebelumnya  
-- Total spending per customer  
-
-### 🔢 Numerical Features  
-- Age  
-- Annual Income  
-- Shopping Frequency  
-- Purchase Amount  
-- Spending Score  
-
-### 🔠 Categorical Features  
-- Gender  
-- Product Category  
-- Payment Method  
-- Shipping Type  
-- Customer Segment  
-- City / State  
+- Total spending per pelanggan  
 
 ---
 
-# 🔍 Exploratory Data Analysis (EDA)
+## 🔍 Exploratory Data Analysis (EDA)
 
-Analisis eksploratif dilakukan melalui:  
+Analisis eksploratif termasuk:  
 - Statistical summary  
-- Distribusi usia & customer segment  
-- Analisis kategori produk  
-- Pembayaran & tipe pengiriman  
-- Korelasi variabel numerik  
-- Segmentasi customer berdasarkan spending  
+- Distribusi usia & demografi  
+- Analisis kategori produk paling diminati  
+- Pola metode pembayaran & shipping  
+- Korelasi antar variabel numerik  
+- Segmentasi pelanggan berdasarkan spending  
 
-Visualisasi dibuat menggunakan:  
-`Matplotlib`, `Seaborn`, `Plotly`
-
----
-
-# 📈 Business Insights & Strategic Recommendations  
-
-Ringkasan temuan analisis beserta rekomendasi strategis yang dapat diterapkan perusahaan retail/e-commerce.
-
-## ⭐ Strategic Recommendation Table  
-
-| **Area Strategis** | **Insight Utama (Hasil Analisis Data)** | **Rekomendasi Strategis** |
-|------------------|-------------------------------------------|----------------------------|
-| **1. Segmentasi Pasar & Demografi** | Mayoritas pelanggan berusia **Mature (41–60, 38,5%)** & **Adult (26–40, 28,3%)**. Gender didominasi **Male (68%)**. | Fokus pada segmen Mature & Adult. Sesuaikan kampanye (formal, workwear, casual). Gunakan targeted ads (IG/TikTok/YouTube). |
-| **2. Produk & Inventory Management** | Produk paling populer: **Blouse, Jewelry, Pants, Shirt**. | Pastikan kategori populer selalu ready stock. Tambah variasi ukuran/warna. Prioritaskan inventory high-demand. |
-| **3. Payment & Shipping** | Metode tertinggi: **Credit Card (17,8%)**. Spending besar muncul pada kombinasi **Credit Card + Free Shipping** & **Venmo + 2-Day Shipping**. | Buat promo kartu kredit, kombinasi shipping, free shipping untuk transaksi tertentu. |
-| **4. Promosi & Diskon** | Spending pengguna promo vs non-promo hampir sama (~USD 15). Promo belum efektif meningkatkan transaksi. | Gunakan **threshold-based discount** (> USD 2000 → diskon 10%). Buat bundling produk populer. |
-| **5. Subscription & Loyalty Program** | Subscriber cukup loyal dengan spending stabil. | Tambahkan tier loyalty (Silver/Gold/Platinum), benefit eksklusif: free shipping, early access, birthday reward. |
-| **6. Customer Experience & Retensi** | Rating 3.7–3.8/5, Young Adult memberi rating tertinggi. | Targetkan rating >4.0 dengan peningkatan kualitas produk, pengiriman cepat, retur mudah, post-transaction survey. |
-| **7. Lokasi & Ekspansi Pasar** | Spending tertinggi: **Illinois, Montana, Idaho**. | Lakukan kampanye regional. Gunakan micro-influencers & promo offline–online di wilayah tersebut. |
+Visualisasi dibuat menggunakan Plotly dan Seaborn, serta disajikan dalam dashboard interaktif.
 
 ---
 
-## 🔥 Key Insights (Ringkasan)
-- Usia 26–60 tahun adalah target utama — segmen produktif.  
-- Fashion & accessories mendominasi preferensi produk.  
-- Metode pembayaran tertentu mendorong spending besar.  
-- Program promo memerlukan optimasi.  
-- Pelanggan subscriber memiliki retensi lebih tinggi.  
-- Beberapa kota memiliki potensi ekspansi pasar.  
+## 📈 Business Insights & Strategic Recommendations  
+
+| **Area Strategis** | **Insight Utama** | **Rekomendasi Strategis** |
+|------------------|------------------|---------------------------|
+| Segmentasi Pasar & Demografi | Mayoritas pelanggan adalah usia Mature (41–60) & Adult (26–40), gender didominasi Male (68%) | Fokus kampanye ke segmen tersebut — gunakan konten sesuai preferensi mereka; promosi lewat media sosial & digital ads |
+| Produk & Inventory Management | Produk populer: Blouse, Jewelry, Pants, Shirt | Pastikan produk populer tersedia stock, variasi ukuran/warna, prioritas manajemen inventory kategori ini |
+| Payment & Shipping | Pembayaran via Credit Card tertinggi, kombinasi kartu + free shipping & payment method tertentu berkorelasi dengan spending tinggi | Tawarkan promo kartu kredit, bundling payment–shipping (free shipping), promosi metode pembayaran & pengiriman yang efektif |
+| Promosi & Diskon | Promo saat ini belum terlalu efektif menaikkan spending | Gunakan strategi threshold-based discount & bundling produk populer agar promo lebih efektif |
+| Loyalty & Subscription | Pelanggan loyal menunjukkan spending stabil | Perkenalkan program loyalitas (tier: Silver/Gold/Platinum), benefit eksklusif (free shipping, early access, hadiah ulang tahun) |
+| Customer Experience & Retensi | Rating pelanggan ~3.7–3.8/5, perlu ditingkatkan | Tingkatkan kualitas layanan & produk, percepat pengiriman, permudah retur, lakukan survey after-sales |
+| Lokasi & Ekspansi Pasar | Ada wilayah dengan spending tinggi | Fokus ekspansi dan promosi regional di area tersebut (online & offline), gunakan strategi marketing lokal |
 
 ---
 
 ## 🛠 Tools & Technologies  
 - Python  
-- Pandas  
-- NumPy  
-- Matplotlib  
-- Seaborn  
-- Plotly  
+- Pandas, NumPy  
 - Streamlit  
-- Jupyter Notebook  
+- Plotly, Seaborn / Matplotlib  
+- Jupyter Notebook / script analisis  
+- Git & GitHub  
 
 ---
 
-## 📈 Skills Highlighted  
+## 📈 Skills yang Ditampilkan  
+- Data Wrangling & Cleaning  
 - Exploratory Data Analysis  
-- Data Cleaning  
-- Feature Exploration  
-- Dashboard Building  
-- Business Insight Interpretation  
-- Data Storytelling  
+- Data Visualization & Storytelling  
+- Business Insight & Recommendation  
+- Dashboard Development  
+- Dokumentasi & Portofolio Profesional  
 
 ---
 
-## 👨‍💻 Author  
-**Aris Darya Fernanda**  
-*Aspiring Data Analyst | Business Insight Enthusiast*
-
-🔗 Streamlit App: https://shopping-trends-analysis.streamlit.app/  
-🔗 GitHub Repo: https://github.com/arisdarya11/Shopping-Trends-Analysis
+## 👤 Tentang Penulis  
+**Aris Darya Fernanda** — Data Analyst & Business Insight Enthusiast  
+🔗 LinkedIn: https://www.linkedin.com/in/aris-darya-fernanda-b21b652a0/  
+💻 GitHub: https://github.com/arisdarya11/Shopping-Trends-Analysis  
 
 ---
